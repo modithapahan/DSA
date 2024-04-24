@@ -9,7 +9,7 @@ public class Q9 {
      */
 
     public static int maximumElement(List<Integer> list) {
-        int bigNo = list.get(0);
+        int bigNo = list.get(0); // default
 
         for (int no : list) {
             if (no > bigNo) {
@@ -20,7 +20,7 @@ public class Q9 {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = List.of(51, 2, 9, 14, 13);
+        List<Integer> list = List.of(51, 2, 91, 14, 13);
 
         System.out.println(maximumElement(list));
     }
