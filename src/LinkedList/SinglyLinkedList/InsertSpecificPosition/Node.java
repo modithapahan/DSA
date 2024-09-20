@@ -19,20 +19,22 @@ class SinglyList {
             System.out.println("Invalid Position!");
             return;
         }
-        else if(position == 1) {
-            newNode.next = head;
-            head = newNode;
-            return;
-        }
+        else {
+            if(position == 1) {
+                newNode.next = head;
+                head = newNode;
+                return;
+            }
+            Node current = head;
+            int count = 1;
 
-        Node current = head;
-        int count = 1;
-        while(count < position-1) {
-            current = current.next;
-            count++;
+            while(count < position-1) {
+                current = current.next;
+                count++;
+            }
+            newNode.next = current.next;
+            current.next = newNode;
         }
-        newNode.next = current.next;
-        current.next = newNode;
     }
 
     public void printList() {
