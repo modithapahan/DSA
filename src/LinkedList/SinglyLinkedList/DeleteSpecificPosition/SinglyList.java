@@ -72,6 +72,7 @@ class SinglyList {
         third.next = forth;
 
         sl.deleteNodeAtSpecificPosition(3);
+        sl.deleteNodeAtSpecificPosition(0);
         sl.display();
     }
 }
