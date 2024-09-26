@@ -59,7 +59,6 @@ class SinglyList {
 
         current.next = current.next.next;
         temp = null;
-
     }
 
     public void display() {
