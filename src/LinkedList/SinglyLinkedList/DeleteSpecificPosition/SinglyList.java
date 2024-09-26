@@ -25,29 +25,41 @@ class SinglyList {
 
     public void deleteNodeAtSpecificPosition(int position) {
         int listSize = findSize();
+
         if(head == null) {
             System.out.println("Empty List");
             return;
-        } else if(position == 1) {
+        }
+
+        if (listSize < position || position <= 0) {
+            System.out.println("Position out of bounds");
+            return;
+        }
+
+        if(position == 1) {
             Node temp1 = head;
             head = head.next;
             temp1 = null;
-        } else if (listSize < position || position <= 0) {
-            System.out.println("Position out of bounds");
             return;
-        } else {
-            Node current = head;
-            int count = 1;
-
-            while(current != null && count < position - 1) {
-                count++;
-                current = current.next;
-            }
-
-            Node temp = current.next;
-            current.next = current.next.next;
-            temp = null;
         }
+
+        Node current = head;
+        int count = 1;
+
+        while(current != null && count < position - 1) {
+            current = current.next;
+            count++;
+        }
+
+        if(current == null || current.next == null) {
+            return;
+        }
+
+        Node temp = current.next;
+
+        current.next = current.next.next;
+        temp = null;
+
     }
 
     public void display() {
